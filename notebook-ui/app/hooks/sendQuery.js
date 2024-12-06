@@ -4,7 +4,7 @@ export const sendQueryToBackend = async (query) => {
 
   try {
     console.log("Sending query to backend...");
-    const response = await fetch("http://localhost:8000/query/", {
+    const response = await fetch("https://676b-14-169-4-187.ngrok-free.app/query/", {
       method: "POST",
       body: formData,
     });

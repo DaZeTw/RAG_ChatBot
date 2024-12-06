@@ -4,7 +4,7 @@ export const uploadFileToBackend = async (file) => {
 
   try {
     console.log("Sending request to backend...");
-    const response = await fetch("http://127.0.0.1:8000/upload/", {
+    const response = await fetch("https://676b-14-169-4-187.ngrok-free.app/upload/", {
       method: "POST",
       body: formData,
     });
