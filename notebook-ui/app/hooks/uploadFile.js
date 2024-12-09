@@ -4,6 +4,7 @@ export const uploadFileToBackend = async (file) => {
   formData.append("file", file);
 
   try {
+    console.log("NRGOK_URL:", NGROK_URL);
     console.log("Sending request to backend...");
     const response = await fetch(`${NGROK_URL}/upload/`, {
       method: "POST",
