@@ -1,10 +1,5 @@
-import dotenv from "dotenv";
-
-dotenv.config();
-
 export const sendQueryToBackend = async (query) => {
-  const NGROK_URL = process.env.NGROK_PUBLIC_URL; // Load from env file
-
+  const NGROK_URL = process.env.NEXT_PUBLIC_NGROK_URL;
   const formData = new FormData();
   formData.append("query", query);
 
