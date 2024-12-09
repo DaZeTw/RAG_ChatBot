@@ -1,10 +1,15 @@
+import dotenv from "dotenv";
+
+dotenv.config();
+
 export const uploadFileToBackend = async (file) => {
+  const NGROK_URL = process.env.NGROK_PUBLIC_URL;
   const formData = new FormData();
   formData.append("file", file);
 
   try {
     console.log("Sending request to backend...");
-    const response = await fetch("https://676b-14-169-4-187.ngrok-free.app/upload/", {
+    const response = await fetch(`${NGROK_URL}/upload/`, {
       method: "POST",
       body: formData,
     });

@@ -1,10 +1,16 @@
+import dotenv from "dotenv";
+
+dotenv.config();
+
 export const sendQueryToBackend = async (query) => {
+  const NGROK_URL = process.env.NGROK_PUBLIC_URL; // Load from env file
+
   const formData = new FormData();
   formData.append("query", query);
 
   try {
     console.log("Sending query to backend...");
-    const response = await fetch("https://676b-14-169-4-187.ngrok-free.app/query/", {
+    const response = await fetch(`${NGROK_URL}/query/`, {
       method: "POST",
       body: formData,
     });
